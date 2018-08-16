@@ -1,0 +1,115 @@
+<resources>
+
+    <!--application name-->
+    <string name="app_name">TOSERBA</string>
+
+    <!--navigation drawer and home menu name-->
+    <string name="menu_product">Produk</string>
+    <string name="menu_cart">Troli</string>
+    <string name="menu_checkout">Pembayaran</string>
+    <string name="menu_profile">Profil</string>
+    <string name="menu_info">Informasi</string>
+    <string name="menu_about">Tentang</string>
+    <string name="menu_share">Bagikan</string>
+    <string name="menu_contact">Hubungi Kami</string>
+
+    <!--title bar-->
+    <string name="title_category">Kategori</string>
+    <string name="title_menu">Menu</string>
+    <string name="title_cart">Troli Saya</string>
+    <string name="title_checkout">Pembayaran</string>
+    <string name="title_confirm">HOREEE !</string>
+    <string name="title_contact_us">Hubungi kami</string>
+    <string name="title_about">Tentang</string>
+    <string name="title_buy">Beli</string>
+    <string name="title_save">Simpan</string>
+
+    <!--action-->
+    <string name="action_cart">Troli Saya</string>
+    <string name="action_checkout">Proses Pembayaran</string>
+    <string name="action_buy">Beli</string>
+    <string name="action_save">Simpan</string>
+    <string name="action_clear">Hapus Semua</string>
+
+    <!--information tab name-->
+    <string name="information_tab1">Cara Pembelian</string>
+    <string name="information_tab2">Pembayaran</string>
+    <string name="information_tab3">Hubungi Kami</string>
+
+    <!--network-->
+    <string name="no_internet">Silahkan periksa koneksi internet anda</string>
+    <string name="alert">Koneksi Gagal</string>
+    <string name="not_found">Produk tidak ditemukan !</string>
+
+    <!--shipping information on checkout menu-->
+    <string name="shipping_list_1">Gratis Ongkir</string>
+    <string name="shipping_list_2">Bayar Ditempat</string>
+    <string name="shipping_list_3">POS Indonesia</string>
+    <string name="shipping_list_4">JNE</string>
+
+    <!--menu, cart and order-->
+    <string name="search">Cari</string>
+    <string name="confirm">Konfirmasi</string>
+    <string name="number_order">Jumlah Pesanan : </string>
+    <string name="order">Pesanan</string>
+    <string name="detail">Detail</string>
+    <string name="total_order">Total Pesanan:</string>
+    <string name="clear_order">Hapus Pesanan</string>
+    <string name="clear_all_order">Apakah anda ingin membatalkan semua pesanan ? </string>
+    <string name="clear_one_order">Apakah anda ingin membatalkan pesanan ?</string>
+    <string name="db_exist_alert">Apakah anda ingin memindahkan ke pesanan sebelumnya ?</string>
+    <string name="no_order">Troli anda kosong, Silahkan lakukan pemesanan</string>
+    <string name="option_yes">Ya</string>
+    <string name="option_no">Tidak</string>
+
+    <!--checkout menu-->
+    <string name="checkout_your_name">Nama</string>
+    <string name="checkout_address">Alamat</string>
+    <string name="checkout_city">Kota</string>
+    <string name="checkout_province">Provinsi</string>
+    <string name="checkout_email">Email</string>
+    <string name="checkout_set_date">Tanggal</string>
+    <string name="checkout_set_time">Waktu</string>
+    <string name="checkout_phone_number">Nomor Telepon</string>
+    <string name="checkout_order_list">Daftar Pesanan</string>
+    <string name="checkout_add_comment">Catatan (Optional)</string>
+    <string name="checkout_send_order">Kirim</string>
+    <string name="form_alert">Silahkan, Lengkapi Form ini </string>
+    <string name="sending_alert">Sending data. Please wait &#8230;</string>
+    <string name="ok_alert">Pesanan anda Telah Dikirim</string>
+    <string name="failed_alert">Pesanan anda belum Dikirim</string>
+    <string name="order_alert">Anda belum memesan</string>
+    <string name="no_order_menu">Tak ada pesanan</string>
+
+    <!--app about information-->
+    <string name="app_version">Version 1.1 </string>
+    <string name="app_copyright">Copyright &#169; 2018 Mobile MABES TNI \n All rights reserved</string>
+    <string name="app_email">mobilemabestni@gmail.com</string>
+    <string name="share_summary">Bagikan</string>
+    <string name="rate_summary">Berikan penilaian dan tanggapan</string>
+    <string name="more_summary">Aplikasi lain</string>
+    <string name="title_app_name">Nama Aplikasi</string>
+    <string name="title_app_version">Version</string>
+    <string name="title_app_email">Email</string>
+    <string name="title_app_copyright">Copyright</string>
+    <string name="title_app_share">Bagikan</string>
+    <string name="title_app_rate">Rating</string>
+    <string name="title_app_more">Lain-lain</string>
+    <string name="more_apps">https://play.google.com/store/apps/developer?id=Solodroid</string>
+    <string name="share_content">I Would like to share this with you. Here You Can Download This Application from PlayStore</string>
+
+    <!--contact us-->
+    <string name="hint_email_subject">Judul :</string>
+    <string name="hint_email_message">Pesan :</string>
+    <string name="button_send">Kirim</string>
+
+    <!--nav drawer header image-->
+    <!--set "@string/drawer_content_on" to enable navigation drawer header image-->
+    <!--set "@string/drawer_content_off" to disable navigation drawer header image-->
+    <string name="drawer_visibility">@string/drawer_content_on</string>
+    <string name="drawer_open">Slider Menu Opened</string>
+    <string name="drawer_close">Slider Menu Closed</string>
+    <string name="drawer_content_on">0</string>
+    <string name="drawer_content_off">2</string>
+
+</resources>
