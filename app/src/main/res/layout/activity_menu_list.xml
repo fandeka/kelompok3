@@ -14,7 +14,7 @@
         android:layout_width="fill_parent"
         android:layout_height="45dp"
         android:layout_below="@id/toolbar"
-        android:background="@color/ColorPrimary"
+        android:background="#adadad"
         android:gravity="center_vertical"
         android:visibility="visible">
 
@@ -30,7 +30,7 @@
             android:inputType="text"
             android:padding="7dp"
             android:singleLine="true"
-            android:textColor="@color/hint"
+            android:textColor="@android:color/darker_gray"
             android:textSize="14sp" />
 
         <ImageButton
@@ -38,7 +38,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_weight="3"
-            android:background="@color/ColorPrimary"
+            android:background="@android:color/darker_gray"
             android:src="@drawable/ic_search" />
 
     </LinearLayout>

@@ -94,10 +94,10 @@
                             android:id="@+id/send"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:background="@android:color/darker_gray"
                             android:text="@string/button_send"
-                            android:background="@color/ColorPrimary"
-                            android:textColor="@color/white"
-                            android:layout_gravity="right" />
+                            android:textColor="@color/white" />
                     </LinearLayout>
 
                 </LinearLayout>

@@ -52,7 +52,7 @@ public class AdapterCart extends BaseAdapter {
 			
 			holder.txtMenuName.setText(ActivityCart.Menu_name.get(position));
 			holder.txtQuantity.setText(String.valueOf(ActivityCart.Quantity.get(position)));
-			holder.txtPrice.setText(ActivityCart.Sub_total_price.get(position)+" "+ActivityCart.Currency);
+			holder.txtPrice.setText(ActivityCart.Currency+" "+ActivityCart.Sub_total_price.get(position));
 			
 			return convertView;
 		}

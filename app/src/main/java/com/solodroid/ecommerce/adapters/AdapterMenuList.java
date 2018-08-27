@@ -54,7 +54,7 @@ public class AdapterMenuList extends BaseAdapter {
 			holder.imgThumb = (ImageView) convertView.findViewById(R.id.imgThumb);
 			
 			holder.txtText.setText(ActivityMenuList.Menu_name.get(position));
-			holder.txtSubText.setText(ActivityMenuList.Menu_price.get(position)+" "+ActivityMenuList.Currency);
+			holder.txtSubText.setText(ActivityMenuList.Currency+" "+ActivityMenuList.Menu_price.get(position));
 
 			Picasso.with(activity).load(Config.ADMIN_PANEL_URL+"/"+ActivityMenuList.Menu_image.get(position)).placeholder(R.drawable.loading).into(holder.imgThumb);
 
