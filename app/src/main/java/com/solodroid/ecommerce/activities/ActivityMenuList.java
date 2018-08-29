@@ -64,7 +64,9 @@ public class ActivityMenuList extends AppCompatActivity {
 	// create arraylist variables to store data from server
 	public static ArrayList<Long> Menu_ID = new ArrayList<Long>();
 	public static ArrayList<String> Menu_name = new ArrayList<String>();
+
 	//public static ArrayList<Double> Menu_price = new ArrayList<Double>();
+
 	public static ArrayList<String> Menu_price = new ArrayList<String>();
 	public static ArrayList<String> Menu_image = new ArrayList<String>();
 
@@ -390,7 +392,9 @@ public class ActivityMenuList extends AppCompatActivity {
 			    
 			    Menu_ID.add(Long.parseLong(menu.getString("Menu_ID")));
 			    Menu_name.add(menu.getString("Menu_name"));
+
 			   // Menu_price.add(Double.valueOf(formatData.format(menu.getDouble("Price"))));
+
 
 				String price_string = formatData.format(menu.getDouble("Price"));
 				Menu_price.add(price_string);
