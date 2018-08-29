@@ -3,31 +3,34 @@
 	android:layout_width="fill_parent"
 	android:layout_height="wrap_content"
 	android:padding="5dp">
-	<TextView 
-		android:id="@+id/txtMenuName"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:maxWidth="150dp"
-		android:layout_centerVertical="true"
-		android:layout_alignParentLeft="true"
-		android:textStyle="bold"
-		android:textSize="16sp"/>
 
 	<TextView
-	    android:id="@+id/txtQuantity"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:layout_centerVertical="true"
-	    android:layout_marginRight="15dp"
-	    android:layout_toLeftOf="@+id/txtPrice"
-	    android:textSize="16sp" />
-  
-	<TextView 
-	    android:id="@+id/txtPrice"
-		android:layout_width="100dp"
+		android:id="@+id/txtMenuName"
+		android:layout_width="206dp"
 		android:layout_height="wrap_content"
+		android:layout_alignParentLeft="true"
 		android:layout_centerVertical="true"
-		android:layout_alignParentRight="true"
+		android:maxWidth="150dp"
 		android:textSize="16sp"
-		android:gravity="right"/>  
+		android:textStyle="bold" />
+
+	<TextView
+		android:id="@+id/txtQuantity"
+		android:layout_width="14dp"
+		android:layout_height="wrap_content"
+		android:layout_alignParentEnd="true"
+		android:layout_alignParentTop="true"
+		android:layout_marginEnd="147dp"
+		android:textSize="16sp"
+		android:layout_alignParentRight="true"
+		android:layout_marginRight="147dp" />
+
+	<TextView
+		android:id="@+id/txtPrice"
+		android:layout_width="144dp"
+		android:layout_height="wrap_content"
+		android:layout_alignParentRight="true"
+		android:layout_centerVertical="true"
+		android:gravity="right"
+		android:textSize="16sp" />
 </RelativeLayout>

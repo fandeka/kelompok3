@@ -64,9 +64,10 @@ public class ActivityMenuList extends AppCompatActivity {
 	// create arraylist variables to store data from server
 	public static ArrayList<Long> Menu_ID = new ArrayList<Long>();
 	public static ArrayList<String> Menu_name = new ArrayList<String>();
-	public static ArrayList<Double> Menu_price = new ArrayList<Double>();
+	//public static ArrayList<Double> Menu_price = new ArrayList<Double>();
+	public static ArrayList<String> Menu_price = new ArrayList<String>();
 	public static ArrayList<String> Menu_image = new ArrayList<String>();
-	
+
 	String MenuAPI;
 	String TaxCurrencyAPI;
 	int IOConnect = 0;
@@ -75,7 +76,9 @@ public class ActivityMenuList extends AppCompatActivity {
 	String Keyword;
 	
 	// create price format
-	DecimalFormat formatData = new DecimalFormat("#.##");
+
+    //String pattern = "###,###.###";
+	DecimalFormat formatData = new DecimalFormat("###,###.###");
 	
 	
     @Override
@@ -387,7 +390,11 @@ public class ActivityMenuList extends AppCompatActivity {
 			    
 			    Menu_ID.add(Long.parseLong(menu.getString("Menu_ID")));
 			    Menu_name.add(menu.getString("Menu_name"));
-			    Menu_price.add(Double.valueOf(formatData.format(menu.getDouble("Price"))));
+			   // Menu_price.add(Double.valueOf(formatData.format(menu.getDouble("Price"))));
+
+				String price_string = formatData.format(menu.getDouble("Price"));
+				Menu_price.add(price_string);
+
 			    Menu_image.add(menu.getString("Menu_image"));
 				    
 			}

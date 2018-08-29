@@ -297,7 +297,13 @@ public class ActivityMenuDetail extends AppCompatActivity {
                 });
 
                 txtText.setText(Menu_name);
-                txtSubText.setText("Price : " + Menu_price + " " + ActivityMenuList.Currency + "\n" + "Status : " + Menu_serve + "\n" + "Stock : " + Menu_quantity);
+
+                DecimalFormat formatRupiah = new DecimalFormat("###,###.###");
+                String price_string = formatRupiah.format(Menu_price);
+
+                //txtSubText.setText("Price : " +ActivityMenuList.Currency + " " + Menu_price + "\n" + "Status : " + Menu_serve + "\n" + "Stock : " + Menu_quantity);
+                txtSubText.setText("Price : " +ActivityMenuList.Currency + " " + price_string + "\n" + "Status : " + Menu_serve + "\n" + "Stock : " + Menu_quantity);
+
                 txtDescription.loadDataWithBaseURL("", Menu_description, "text/html", "UTF-8", "");
                 txtDescription.setBackgroundColor(Color.parseColor("#ffffff"));
 

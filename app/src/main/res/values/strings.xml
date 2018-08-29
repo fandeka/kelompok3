@@ -1,7 +1,7 @@
 <resources>
 
     <!--application name-->
-    <string name="app_name">TOSERBA</string>
+    <string name="app_name">TOKO HEMAT</string>
 
     <!--navigation drawer and home menu name-->
     <string name="menu_product">Produk</string>
@@ -83,8 +83,8 @@
 
     <!--app about information-->
     <string name="app_version">Version 1.1 </string>
-    <string name="app_copyright">Copyright &#169; 2018 Mobile MABES TNI \n All rights reserved</string>
-    <string name="app_email">mobilemabestni@gmail.com</string>
+    <string name="app_copyright">Copyright &#169; 2018 Toko Online \n All rights reserved</string>
+    <string name="app_email">TokoOnline@gmail.com</string>
     <string name="share_summary">Bagikan</string>
     <string name="rate_summary">Berikan penilaian dan tanggapan</string>
     <string name="more_summary">Aplikasi lain</string>

@@ -539,18 +539,28 @@ public class ActivityCheckout extends AppCompatActivity {
     		Order_price += Sub_total_price;
     		
     		// calculate order price
-    		OrderList += (Quantity+" "+Menu_name+" "+Sub_total_price+" "+Currency+",\n");
+			DecimalFormat formatrupiah = new DecimalFormat("###,###.###");
+			String price_string = formatrupiah.format(Sub_total_price);
+    		//OrderList += (Quantity+" "+Menu_name+" "+Currency +" "+Sub_total_price+",\n");
+			OrderList += (Quantity+" "+Menu_name+" "+Currency +" "+price_string+",\n");
     	}
     	
     	if(OrderList.equalsIgnoreCase("")){
     		OrderList += getString(R.string.no_order_menu);
     	}
-    	
+
+
     	tax = Double.parseDouble(formatData.format(Order_price *(Tax /100)));
-    	Total_price = Double.parseDouble(formatData.format(Order_price - tax));
-    	OrderList += "\nOrder: "+Order_price+" "+Currency+
-    			"\nTax: "+Tax+"%: "+tax+" "+Currency+
-    			"\nTotal: "+Total_price+" "+Currency;
+    	Total_price = Double.parseDouble(formatData.format(Order_price + tax));
+
+		DecimalFormat format_rupiah_order = new DecimalFormat("###,###.###");
+		String Order_price_string = format_rupiah_order.format(Order_price);
+		String Total_price_string = format_rupiah_order.format(Total_price);
+		String tax_string = format_rupiah_order.format(tax);
+
+    	OrderList += "\nOrder: "+Currency +" "+Order_price_string+
+    			"\nTax: "+Tax+"%: "+Currency +" "+tax_string+
+    			"\nTotal: "+Currency+" "+Total_price_string;
     	edtOrderList.setText(OrderList);
     }
     

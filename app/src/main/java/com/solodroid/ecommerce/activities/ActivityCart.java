@@ -350,7 +350,10 @@ public class ActivityCart extends AppCompatActivity {
         protected void onPostExecute(Void result) {
             // TODO Auto-generated method stub
             // show data
-            txtTotal.setText(Total_price + " " + Currency);
+            DecimalFormat formatrupiah = new DecimalFormat("###,###.###");
+            String price_string = formatrupiah.format(Total_price);
+            txtTotal.setText(Currency + " " + price_string);
+			//txtTotal.setText(Total_price + " " + Currency);
             txtTotalLabel.setText(getString(R.string.total_order) + " (Tax " + Tax + "%)");
             prgLoading.setVisibility(View.GONE);
             // if data available show data on list
@@ -384,7 +387,7 @@ public class ActivityCart extends AppCompatActivity {
         }
 
         // count total order
-        Total_price -= (Total_price * (Tax / 100));
+        Total_price += (Total_price * (Tax / 100));
         Total_price = Double.parseDouble(formatData.format(Total_price));
     }
 

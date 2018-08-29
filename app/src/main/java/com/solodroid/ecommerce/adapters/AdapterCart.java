@@ -10,6 +10,9 @@ import android.widget.TextView;
 import com.solodroid.ecommerce.R;
 import com.solodroid.ecommerce.activities.ActivityCart;
 
+import java.text.DecimalFormat;
+
+
 // adapter class for custom order list
 public class AdapterCart extends BaseAdapter {
 		private LayoutInflater inflater;
@@ -52,7 +55,14 @@ public class AdapterCart extends BaseAdapter {
 			
 			holder.txtMenuName.setText(ActivityCart.Menu_name.get(position));
 			holder.txtQuantity.setText(String.valueOf(ActivityCart.Quantity.get(position)));
-			holder.txtPrice.setText(ActivityCart.Sub_total_price.get(position)+" "+ActivityCart.Currency);
+			//holder.txtPrice.setText(ActivityCart.Currency+" "+ ActivityCart.Sub_total_price.get(position));
+
+			DecimalFormat formatRupiah = new DecimalFormat("###,###.###");
+			holder.txtPrice.setText(ActivityCart.Currency+" "+ formatRupiah.format(ActivityCart.Sub_total_price.get(position)));
+
+
+
+
 			
 			return convertView;
 		}
