@@ -2,6 +2,9 @@
 
 <?php
 	include_once('includes/connect_database.php'); 
+	include('library/class.phpmailer.php');
+	include('library/PHPMailerAutoload.php');
+	include('includes/sending_email.php');
 	include('functions.php'); 
 
 	if(isset($_POST['btnReset'])){
@@ -70,9 +73,7 @@
 					$to = $email;
 					$subject = $email_subject;
 					$message = $reset_message." ".$password;
-					$from = $admin_email;
-					$headers = "From: ".$from;
-					mail($to,$subject,$message,$headers);
+					email($to,$subject,$message);
 					
 					$error['reset_result'] = "*New Password has been sent to your email.";
 				}else{

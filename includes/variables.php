@@ -18,9 +18,16 @@
 	$change_message = "You have change your admin info such as email and or password.";
 	$reset_message = "Your new password is ";
 	
-	//order notification configuration
+	//order notification configuration for admin
 	$reservation_subject = "New Order Notification!";
 	$reservation_message = "There is new order, please check Admin Panel.";
+
+
+	//order notification for customer in android
+
+	$checkout_subject = 'Checkout Berhasil';
+	$checkout_message = 'Silahkan Lakukan Pembayaran';
+
 	
 	//copyright
 	$copyright = "";

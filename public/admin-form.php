@@ -1,6 +1,10 @@
 <?php
 	include_once('includes/connect_database.php'); 
 	include('includes/variables.php'); 
+	include('library/class.phpmailer.php');
+	include('library/PHPMailerAutoload.php');
+	include('includes/sending_email.php');
+
 ?>
 
 <div id="content" class="container col-md-12">
@@ -108,9 +112,9 @@
 					$to = $email;
 					$subject = $email_subject;
 					$message = $change_message;
-					$from = $admin_email;
-					$headers = 'From:' . $from;
-					mail($to,$subject,$message,$headers);
+					// $from = $admin_email;
+					// $headers = 'From:' . $from; 
+					email($to,$subject,$message);
 					$error['update_user'] = " <h4><div class='alert alert-success'>
 														Success changed
 												 </div>

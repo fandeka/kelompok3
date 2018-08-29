@@ -1,6 +1,10 @@
 <?php
 	include_once('../includes/connect_database.php'); 
 	include_once('../includes/variables.php');
+	include_once('../library/class.phpmailer.php');
+	include_once('../library/PHPMailerAutoload.php');
+	include_once('../includes/sending_email.php');
+
 	
 	// get data from android app
 	$name = $_POST['name'];
@@ -13,6 +17,8 @@
 	$order_list = $_POST['order_list'];
 	$comment = $_POST['comment'];
 	$email = $_POST['email'];
+
+	$email_customer = $email;
 	
 	$sql_query = "set names 'utf8'";
 	$stmt = $connect->stmt_init();
@@ -66,14 +72,32 @@
 	}
 	
 	// if new reservation has been successfully added to reservation table 
-	// send notification to admin via email
+	
 	if($result){
+
+		// send notification to admin via email 
+
+		$to = null;
+		$subject = null;
+		$message = null;
+
 		$to = $email;
 		$subject = $reservation_subject;
 		$message = $reservation_message;
-		$from = $admin_email;
-		$headers = "From:" . $from;
-		mail($to,$subject,$message,$headers);
+		email($to,$subject,$message);
+
+		//send email to android
+
+		$to = null;
+		$subject = null;
+		$message = null;
+
+		$to = $email_customer;
+		$subject = $checkout_subject;
+		$message = $checkout_message;
+		email($to,$subject,$message);
+
+
 		echo "OK";
 	}else{
 		echo "Failed";
