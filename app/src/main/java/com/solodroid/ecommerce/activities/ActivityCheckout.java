@@ -445,6 +445,7 @@ public class ActivityCheckout extends AppCompatActivity {
 		 protected Void doInBackground(Void... params) {
 		  // TODO Auto-generated method stub
 			 // send data to server and store result to variable
+			 PostDataFromSQLite();
 			 Result = getRequest(Name, Alamat, Kota, Provinsi, Email, Name2, Date_n_Time, Phone, OrderList, Comment);
 		  return null;
 		 }
@@ -496,6 +497,7 @@ public class ActivityCheckout extends AppCompatActivity {
             request.setEntity(new UrlEncodedFormEntity(nameValuePairs,HTTP.UTF_8));
         	HttpResponse response = client.execute(request);
             result = request(response);
+
         }catch(Exception ex){
         	result = "Unable to connect.";
         }
@@ -532,7 +534,8 @@ public class ActivityCheckout extends AppCompatActivity {
     	// store all data to variables
     	for(int i=0;i<data.size();i++){
     		ArrayList<Object> row = data.get(i);
-    		
+
+    		//String Menu_ID = row.get(0).toString();
     		String Menu_name = row.get(1).toString();
     		String Quantity = row.get(2).toString();
     		double Sub_total_price = Double.parseDouble(formatData.format(Double.parseDouble(row.get(3).toString())));
@@ -588,4 +591,51 @@ public class ActivityCheckout extends AppCompatActivity {
 		// Ignore orientation change to keep activity from restarting
 		super.onConfigurationChanged(newConfig);
 	}
+
+	public void PostDataFromSQLite(){
+
+		DBHelper dbhelper;
+		ArrayList<ArrayList<Object>> dataSQLite;
+
+		dbhelper = new DBHelper(this);
+		// open database
+		try{
+			dbhelper.openDataBase();
+		}catch(SQLException sqle){
+			throw sqle;
+		}
+		dataSQLite = dbhelper.getAllData();
+
+		// store all data to database using api
+
+
+		for(int i=0;i<dataSQLite.size();i++){
+			ArrayList<Object> row = dataSQLite.get(i);
+
+			String Menu_ID = row.get(0).toString();
+			//String Menu_name = row.get(1).toString();
+			String Quantity = row.get(2).toString();
+
+
+//			String result = "";
+
+			HttpClient client = new DefaultHttpClient();
+			HttpPost request = new HttpPost(Config.ADMIN_PANEL_URL + "/api/update_tbl_menu.php");
+
+			try{
+				List<NameValuePair> ValueOfPost = new ArrayList<NameValuePair>(6);
+				ValueOfPost.add(new BasicNameValuePair("Menu_ID", Menu_ID));
+				//ValueOfPost.add(new BasicNameValuePair("Menu_name", Menu_name));
+				ValueOfPost.add(new BasicNameValuePair("Quantity", Quantity));
+
+				request.setEntity(new UrlEncodedFormEntity(ValueOfPost,HTTP.UTF_8));
+				//HttpResponse response = client.execute(request);
+				client.execute(request);
+                dbhelper.deleteAllData();
+//				result = request(response);
+			}catch(Exception ex){
+//				result = "Unable to connect.";
+			}
+		}
+    }
 }
