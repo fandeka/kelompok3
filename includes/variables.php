@@ -25,8 +25,8 @@
 
 	//order notification for customer in android
 
-	$checkout_subject = 'Checkout Berhasil';
-	$checkout_message = 'Silahkan Lakukan Pembayaran';
+	$checkout_subject = 'Not Used';
+	$checkout_message = 'Not Used';
 
 	
 	//copyright

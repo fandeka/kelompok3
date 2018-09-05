@@ -28,6 +28,7 @@
 		// store result 
 		$stmt->close();
 	}
+
 	
 	// insert data into reservation table
 	$sql_query = "INSERT INTO tbl_reservation(Name, Alamat, Kota, Provinsi, Number_of_people, Date_n_Time, Phone_number, Order_list, Comment, Email) 
@@ -55,6 +56,28 @@
 		//$result = $stmt->store_result();
 		$stmt->close();
 	}
+
+	// Dapatkan last ID sebagai ID Pesanan
+
+	$sql_query_id = "SELECT ID, Order_list
+			FROM tbl_reservation ORDER BY ID DESC LIMIT 1";
+
+	$stmt = $connect->stmt_init();
+	if($stmt->prepare($sql_query_id)) {	
+		// Execute query
+		$stmt->execute();
+		// store result 
+		$stmt->store_result();
+		$stmt->bind_result($ID,$Order_list);
+		$stmt->fetch();
+		$stmt->close();
+	}
+
+
+
+	// akhir dari ID pesanan
+
+
 	
 	// get admin email from user table
 	$sql_query = "SELECT Email 
@@ -93,8 +116,22 @@
 		$message = null;
 
 		$to = $email_customer;
-		$subject = $checkout_subject;
-		$message = $checkout_message;
+		$subject = 'Checkout Berhasil';
+		$message = '<html><body>
+					<h1><strong>No. Pesanan Anda: TOHE'.$ID.'</strong></h1>
+						<h3>Silahkan Lakukan Pembayaran Sesuai Order Anda</h3>
+						<p>'.$Order_list.'</p>
+						<h3>ke salah satu No. Rekening dibawah ini:</h3>
+						<ol>
+						<li>&nbsp;BANK BCA : No. Rek. 0442789987987 a.n Toko Hemat</li>
+						<li>&nbsp;BANK MANDIRI : No. Rek. 0442789987896 a.n Toko Hemat</li>
+						<li>&nbsp;BANK BRI : No. Rek. 3342789987987 a.n Toko Hemat</li>
+						<li>&nbsp;BANK BNI : No. Rek. 5442789987987 a.n Toko Hemat</li>
+						</ol>
+						<p>&nbsp;</p>
+						<p>&nbsp;</p>
+					</body><html>';
+
 		email($to,$subject,$message);
 
 

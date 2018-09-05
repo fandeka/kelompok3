@@ -14,10 +14,10 @@ function email($to,$subject,$message){
 		$mail->SMTPDebug  = 0;
 		$mail->SMTPAuth   = true;
 
-		$mail->Username   = 'administrator_toko@lumau.online';
-		$mail->Password   = 'QPd9b3-@vDIe';
+		$mail->Username   = 'no-reply@3tni.mabes.online';
+		$mail->Password   = '7ZLxzjWX#KS2';
 		//$mail->addCustomHeader($from);
-		$mail->SetFrom('no-reply@lumau.online');
+		$mail->SetFrom('no-reply@3tni.mabes.online');
 
 		$mail->Subject    = $subject;
 		$mail->MsgHTML($message);
