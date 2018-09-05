@@ -109,18 +109,26 @@
 		$message = $reservation_message;
 		email($to,$subject,$message);
 
+
+
+		
+
 		//send email to android
 
 		$to = null;
 		$subject = null;
 		$message = null;
 
+		$order_list = strrchr($Order_list,'Total');
+
 		$to = $email_customer;
 		$subject = 'Checkout Berhasil';
 		$message = '<html><body>
 					<h1><strong>No. Pesanan Anda: TOHE'.$ID.'</strong></h1>
 						<h3>Silahkan Lakukan Pembayaran Sesuai Order Anda</h3>
-						<p>'.$Order_list.'</p>
+						<p>
+						'.$order_list.'
+						</p>
 						<h3>ke salah satu No. Rekening dibawah ini:</h3>
 						<ol>
 						<li>&nbsp;BANK BCA : No. Rek. 0442789987987 a.n Toko Hemat</li>
