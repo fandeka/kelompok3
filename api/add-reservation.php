@@ -135,6 +135,7 @@
 						<li>&nbsp;BANK MANDIRI : No. Rek. 0442789987896 a.n Toko Hemat</li>
 						<li>&nbsp;BANK BRI : No. Rek. 3342789987987 a.n Toko Hemat</li>
 						<li>&nbsp;BANK BNI : No. Rek. 5442789987987 a.n Toko Hemat</li>
+						<li>&nbsp;Setelah melakukan Pembayaran, Silahkan Lakukan Konfirmasi melalui no Whatsapp 081905093022 atau email 3115one@gmail .com disertai bukti tranfer dan no pesanan Anda</li>
 						</ol>
 						<p>&nbsp;</p>
 						<p>&nbsp;</p>
