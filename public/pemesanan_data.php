@@ -13,7 +13,8 @@
 		}else{
 			$ID = "";
 		}
-			
+
+		
 		// create array variable to handle error
 		$error = array();
 			
@@ -154,6 +155,7 @@
 		
 		// parse order list into array
 		$order_list = explode(',',$data['Order_list']);
+		
 			
 	?>
 

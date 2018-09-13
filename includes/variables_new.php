@@ -1,9 +1,9 @@
 <?php
 	//database configuration
-	$host ="45.64.99.131";
-	$user ="lumauonl_db";
-	$pass ="CChruhRZLV9E";
-	$database = "lumauonl_tiga";
+	$host ="localhost";
+	$user ="root";
+	$pass ="";
+	$database = "ecommerce";
 	$connect = new mysqli($host, $user, $pass,$database) or die("Error : ".mysql_error());
 	
 	//access key to access API
@@ -25,8 +25,8 @@
 
 	//order notification for customer in android
 
-	$checkout_subject = 'Checkout Berhasil';
-	$checkout_message = 'Silahkan Lakukan Pembayaran';
+	$checkout_subject = 'Not Used';
+	$checkout_message = 'Not Used';
 
 	
 	//copyright
